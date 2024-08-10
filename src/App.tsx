@@ -1,8 +1,7 @@
-import History from './pages/History'
-import Home from './pages/Home'
+import Router from './components/Router'
 
 function App() {
-  return <History />
+  return <Router />
 }
 
 export default App
