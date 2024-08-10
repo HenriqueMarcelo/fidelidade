@@ -52,3 +52,8 @@ html {
 
   // todo: add responsivo
 }
+
+::selection {
+  color: black;
+  background: #c0c0c0;
+}

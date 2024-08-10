@@ -8,10 +8,10 @@ export default function Header() {
     <div className="container header__container">
       <span className="header__logo">Fidelização</span>
       <div className="header__buttons">
-        <Button info="F$ 50">
-          <IoWalletOutline />
+        <span className="header-info__base">
           Carteira:
-        </Button>
+          <span className="header-info__value">F$ 50</span>
+        </span>
         <Button>
           <GoHistory />
           Histórico
