@@ -1,25 +1,27 @@
 import { IoCloseCircle } from 'react-icons/io5'
 import CartItem from '../CartItem'
 import './style.scss'
+import { useContext } from 'react'
+import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 
 export default function ShoppingCart() {
-  //   return (
-  //     <div className="shopping-cart__background">
-  //       <aside className="shopping-cart__aside">
-  //         <h2 className="shopping-cart__title">Nenhum item no Carrinho</h2>
-  //       </aside>
-  //     </div>
-  //   )
+  const { close, isHidden } = useContext(ShoppingCartContext)
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleBackgroundClick = (e: any) => {
+    if (e.target.classList.contains('shopping-cart__background')) {
+      close()
+    }
+  }
 
   return (
-    <div className="shopping-cart__background">
-      <aside className="shopping-cart__aside">
+    <div
+      className={`shopping-cart__background ${!isHidden && 'shopping-cart__background--visible'}`}
+      onClick={handleBackgroundClick}
+    >
+      <aside className={`shopping-cart__aside ${isHidden && 'shopping-cart__aside--hidden'}`}>
         <h2 className="shopping-cart__title">Itens do Carrinho</h2>
         <div className="shopping-cart__itens">
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
           <CartItem />
           <CartItem />
           <CartItem />
@@ -32,7 +34,7 @@ export default function ShoppingCart() {
           <span>F$ 50</span>
         </div>
         <button className="shopping-cart__button">Confirmar Compra</button>
-        <button className="shopping-cart__close">
+        <button className="shopping-cart__close" onClick={close}>
           <IoCloseCircle />
         </button>
       </aside>

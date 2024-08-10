@@ -1,7 +1,12 @@
 import Router from './components/Router'
+import { ShoppingCartContextProvider } from './contexts/ShoppingCartContext'
 
 function App() {
-  return <Router />
+  return (
+    <ShoppingCartContextProvider>
+      <Router />
+    </ShoppingCartContextProvider>
+  )
 }
 
 export default App

@@ -3,9 +3,12 @@ import Button from '../Button'
 import './style.scss'
 import { GoHistory } from 'react-icons/go'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 
 export default function Header() {
   const navigate = useNavigate()
+  const { toggle } = useContext(ShoppingCartContext)
 
   return (
     <div className="container header__container">
@@ -22,7 +25,7 @@ export default function Header() {
           <GoHistory />
           Histórico
         </Button>
-        <Button info="50">
+        <Button info="50" onClick={() => toggle()}>
           <IoCartOutline />
           Carrinho:
         </Button>
