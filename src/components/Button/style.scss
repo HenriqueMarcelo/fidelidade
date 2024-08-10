@@ -3,7 +3,7 @@
         border: 1px solid black;
         display: inline-flex;
         align-items: center;
-        padding: .5rem .75rem;
+        padding: .75rem .75rem;
         gap: .5rem;
         background-color: transparent;
         border-radius: .5rem;
@@ -26,5 +26,6 @@
         border-radius: 5rem;
         font-size: .75rem;
         font-weight: bold;
+        line-height: 1rem;
     }
 }
