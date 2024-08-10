@@ -1,0 +1,19 @@
+.header {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &__logo {
+        font-size: 1.25rem;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 1rem
+    }
+}
