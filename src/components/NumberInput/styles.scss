@@ -1,0 +1,67 @@
+.number-input {
+  &__base {
+    display: inline-flex;
+    background-color: white;
+    border-radius: .5rem;
+    border: 1px solid black;
+
+    &:focus-within {
+      box-shadow: 0 0 0 1px black;
+    }
+
+  }
+  &__button {
+    color: black;
+    font-weight: 400;
+    padding: 0.538rem 0.5rem;
+    background-color: white;
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    &:hover {
+      color: gray;
+    }
+
+    &:focus {
+      box-shadow: none;
+      color: gray;
+      outline: none;
+    }
+
+    &:last-child {
+      padding-left: 0;
+    }
+
+    &:first-child {
+      padding-right: 0;
+    }
+  }
+
+  &__input {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 130%;
+
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    width: 2rem;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

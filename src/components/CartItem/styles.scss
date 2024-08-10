@@ -1,0 +1,43 @@
+.cart-item {
+    &__base {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        border: 1px solid black;
+        padding: 1rem;
+        border-radius: .5rem;
+        gap: 1rem;
+    }
+
+    &__image {
+        max-width: 6rem;
+        display: block;
+        border-radius: 1rem;
+    }
+
+    &__right {
+        flex: 1;
+    }
+
+    &__name{
+        font-weight: 400;
+        font-size: 1rem;
+        display: flex;
+        text-align: left;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__price{
+        font-size: 1rem;
+        font-weight: 200;
+        white-space: nowrap;
+        font-weight: 500;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 1rem;
+    }
+}

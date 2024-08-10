@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import Product from '../components/Product'
+import ShoppingCart from '../components/ShoppingCart'
 import './Home.scss'
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <Product />
         <Product />
       </div>
+      {/* <ShoppingCart /> */}
     </>
   )
 }

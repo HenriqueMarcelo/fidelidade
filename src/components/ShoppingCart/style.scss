@@ -1,0 +1,85 @@
+.shopping-cart {
+    &__background {
+        position: fixed;
+        top: 0;
+        background-color: rgba(16, 16, 16, 0.9);
+        width: 100vw;
+        height: 100vh;
+        
+    }
+
+    &__aside {
+        background-color: white;
+        width: 30rem;
+        position: absolute;
+        right: 0;
+        height: 100%;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        overflow-y: auto;
+    }
+
+    &__title {
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &__itens {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__hr {
+        margin: 1rem 0;
+        height: 1px;
+    }
+
+    &__line {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    &__button {
+        border: none;
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+        background-color: transparent;
+        border-radius: 1rem;
+        background-color: black;
+        color: white;
+        transition: 0.2s;
+        cursor: pointer;
+        justify-content: center;
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: 500;
+        
+        &:hover {
+            background-color:#404040;
+        }
+    }
+
+    &__close {
+        padding: 0;
+        background: none;
+        border: none;
+        font-size: 3rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        transition: 0.2s;
+        
+        &:hover{
+            color:#404040;
+        }
+    }
+}
