@@ -8,7 +8,7 @@ export default function Product() {
       <h2 className="product__name">Nome do produto</h2>
       <div className="product_price">
         <small className="product__currency">F$ </small>
-        <strong className="product__value">7</strong>
+        <strong className="product__value">15</strong>
       </div>
       <Button>Adicionar ao Carrinho</Button>
     </div>
