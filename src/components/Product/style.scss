@@ -10,16 +10,17 @@
     }
 
     &__name{
-        font-weight: bold;
+        font-weight: 400;
         font-size: 1.25rem;
     }
 
     &__currency{
         font-size: 1rem;
+        font-weight: 200;
     }
 
     &__value {
         font-size: 1.5rem;
-        font-weight: bolder;
+        font-weight: 600;
     }
 }
