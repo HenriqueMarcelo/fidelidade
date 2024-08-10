@@ -27,8 +27,6 @@
 .history-table {
     &__table {
         border-collapse: collapse;
-        
-        // background-color: #f0f0f0;
         border-radius: .5rem;
         overflow: hidden;
         width: 100%;
@@ -38,18 +36,13 @@
 
     &__tr {
         height: 3.75rem;
-
-        &:nth-child(even) {
-            background: #fff;
-        }
     }
     
     &__th {
         font-size: 1rem;
-        color: #fff;
-        background: #404040;
+        border-bottom: 1px solid black;
         padding: 0 1rem;
-        font-weight: 500;
+        font-weight: 700;
     }
 
     &__td {
