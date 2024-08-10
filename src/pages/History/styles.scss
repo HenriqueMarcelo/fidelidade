@@ -1,0 +1,12 @@
+.history {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &__title {
+        font-weight: 600;
+        text-align: left;
+    }}
