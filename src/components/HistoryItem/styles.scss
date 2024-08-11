@@ -8,6 +8,10 @@
         padding: 2rem;
         border-radius: .5rem;
         gap: 1rem;
+
+        @media (max-width: 576px){
+            padding: 1rem;
+        }
     }
 
     &__date {
@@ -21,10 +25,25 @@
         font-weight: 700;
         gap: 1rem;
         width: 100%;
+        
+        @media (max-width: 576px){
+            font-size: 1.25rem;
+        }
     }
 }
 
 .history-table {
+    &__base {
+        overflow-x: auto;
+        width: 100%;
+        // UX
+        @media (max-width: 576px){
+            width: calc(100% + 2rem);
+            padding: 0 1rem;
+            margin-left: -1rem;
+        }
+    }
+    
     &__table {
         border-collapse: collapse;
         border-radius: .5rem;
