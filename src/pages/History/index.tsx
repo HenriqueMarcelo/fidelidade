@@ -1,21 +1,9 @@
-import { useEffect, useState } from 'react'
 import HistoryItem from '../../components/HistoryItem'
 import { useHistory } from '../../hooks/useHistory'
 import './styles.scss'
-import { PurchaseProps } from '../../hooks/useCheckout'
 
 export default function History() {
-  const [histories, setHistories] = useState<PurchaseProps[]>([])
-  const { fetchHistory } = useHistory()
-
-  // todo: utilizar hook do Router
-  useEffect(() => {
-    async function aux() {
-      const response = await fetchHistory()
-      setHistories(response)
-    }
-    aux()
-  })
+  const { histories } = useHistory()
 
   return (
     <div className="container history__container">
