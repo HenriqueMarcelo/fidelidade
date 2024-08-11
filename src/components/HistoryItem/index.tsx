@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { PurchaseProps } from '../../hooks/useCheckout'
 import styles from './styles.module.scss'
 
@@ -6,8 +7,9 @@ type Props = {
 }
 
 export default function HistoryItem({ history }: Props) {
-  // todo: utilizar useMemo
-  const dateString = new Date(history.date).toLocaleDateString()
+  const dateString = useMemo(() => {
+    return new Date(history.date).toLocaleDateString()
+  }, [history])
 
   return (
     <div className={styles['history-item__base']}>

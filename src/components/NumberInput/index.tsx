@@ -1,4 +1,4 @@
-import { ChangeEvent, InputHTMLAttributes } from 'react'
+import { ChangeEvent, InputHTMLAttributes, useCallback } from 'react'
 import styles from './styles.module.scss'
 import { FiMinus, FiPlus } from 'react-icons/fi'
 
@@ -6,14 +6,15 @@ interface NumberInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, '
   onChange?: (customValue: number) => void
 }
 
-// todo: acertar a altura do input para ficar igual aos botões
-
 export function NumberInput({ onChange, value, ...rest }: NumberInputProps) {
-  function handleSetCustomValue(e: ChangeEvent<HTMLInputElement>) {
-    if (onChange) {
-      onChange(Number(e.target.value))
-    }
-  }
+  const handleSetCustomValue = useCallback(
+    function handleSetCustomValue(e: ChangeEvent<HTMLInputElement>) {
+      if (onChange) {
+        onChange(Number(e.target.value))
+      }
+    },
+    [onChange]
+  )
 
   function handleDecreaseValue() {
     if (onChange) {

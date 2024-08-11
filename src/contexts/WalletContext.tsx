@@ -15,7 +15,6 @@ export const WalletContext = createContext({} as WalletContextType)
 export function WalletContextProvider({ children }: ProviderProps) {
   const [wallet, setWallet] = useState(0)
 
-  // todo: useCallback
   async function fetchWallet() {
     const response = await api.get('/wallet')
 

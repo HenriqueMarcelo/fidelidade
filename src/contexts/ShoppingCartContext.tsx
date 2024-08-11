@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useReducer } from 'react'
+import { createContext, ReactNode, useContext, useMemo, useReducer } from 'react'
 import { shoppingCartItemsReducer } from '../reducer/ShoppingCartItemsReducer'
 import { ProductContext } from './ProductContext'
 
@@ -60,14 +60,15 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartContextPro
     return 0
   }
 
-  // Todo: usar useMemo
-  const totalPrice = items.reduce((accumulator, item) => {
-    const product = products.find((i) => i.id === item.id)
-    if (product) {
-      return accumulator + product.price * item.quantity
-    }
-    return accumulator
-  }, 0)
+  const totalPrice = useMemo(() => {
+    return items.reduce((accumulator, item) => {
+      const product = products.find((i) => i.id === item.id)
+      if (product) {
+        return accumulator + product.price * item.quantity
+      }
+      return accumulator
+    }, 0)
+  }, [items, products])
 
   return (
     <ShoppingCartContext.Provider

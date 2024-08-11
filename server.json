@@ -1,6 +1,6 @@
 {
   "wallet": {
-    "value": 1375
+    "value": 1315
   },
   "products": [
     {
@@ -164,6 +164,23 @@
         }
       ],
       "id": 6
+    },
+    {
+      "date": "2024-08-11T22:53:15.619Z",
+      "totalPrice": 60,
+      "items": [
+        {
+          "quantity": 6,
+          "totalPrice": 60,
+          "product": {
+            "id": "2",
+            "name": "10% de desconto",
+            "price": 10,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 7
     }
   ]
 }

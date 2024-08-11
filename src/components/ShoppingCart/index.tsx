@@ -1,7 +1,7 @@
 import { IoCloseCircle } from 'react-icons/io5'
 import CartItem from '../CartItem'
 import styles from './styles.module.scss'
-import { useContext } from 'react'
+import { useCallback, useContext } from 'react'
 import { VisualShoppingCartContext } from '../../contexts/VisualShoppingCartContext'
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import { ProductContext } from '../../contexts/ProductContext.tsx'
@@ -22,14 +22,14 @@ export default function ShoppingCart() {
     }
   }
 
-  // todo: use callback
-  function handleDoCheckout() {
+  // todo: criar modal
+  const handleDoCheckout = useCallback(() => {
     if (totalPrice > wallet) {
       alert('Você não tem pontos suficientes para finalziar esta compra :(')
       return
     }
     doCheckOut()
-  }
+  }, [doCheckOut, totalPrice, wallet])
 
   return (
     <div
