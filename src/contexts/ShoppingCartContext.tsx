@@ -61,9 +61,9 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartContextPro
 
   // Todo: usar useMemo
   const totalPrice = items.reduce((accumulator, item) => {
-    const coffee = produtos.find((i) => i.id === item.id)
-    if (coffee) {
-      return accumulator + coffee.price * item.quantity
+    const produto = produtos.find((i) => i.id === item.id)
+    if (produto) {
+      return accumulator + produto.price * item.quantity
     }
     return accumulator
   }, 0)

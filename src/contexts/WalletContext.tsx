@@ -3,6 +3,7 @@ import { api } from '../lib/axios'
 
 type WalletContextType = {
   wallet: number
+  updateWallet: (purchase: number) => Promise<void>
 }
 
 type ProviderProps = {
@@ -21,6 +22,15 @@ export function WalletContextProvider({ children }: ProviderProps) {
     setWallet(response.data.value)
   }
 
+  // Isso deveria ser feito pelo backend;
+  async function updateWallet(purchase: number) {
+    await api.put('/wallet', {
+      value: purchase,
+    })
+
+    await fetchWallet()
+  }
+
   useEffect(() => {
     fetchWallet()
   }, [])
@@ -29,6 +39,7 @@ export function WalletContextProvider({ children }: ProviderProps) {
     <WalletContext.Provider
       value={{
         wallet,
+        updateWallet,
       }}
     >
       {children}

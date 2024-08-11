@@ -6,11 +6,13 @@ import { VisualShoppingCartContext } from '../../contexts/VisualShoppingCartCont
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import { produtos } from '../../../produtos.ts'
 import { WalletContext } from '../../contexts/WalletContext.tsx'
+import { useCheckout } from '../../hooks/useCheckout.ts'
 
 export default function ShoppingCart() {
   const { close, isHidden } = useContext(VisualShoppingCartContext)
   const { totalPrice, items } = useContext(ShoppingCartContext)
   const { wallet } = useContext(WalletContext)
+  const { doCheckOut } = useCheckout()
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleBackgroundClick = (e: any) => {
@@ -25,6 +27,7 @@ export default function ShoppingCart() {
       alert('Você não tem pontos suficientes para finalziar esta compra :(')
       return
     }
+    doCheckOut()
   }
 
   return (
