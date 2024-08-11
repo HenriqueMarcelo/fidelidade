@@ -1,6 +1,6 @@
 {
   "wallet": {
-    "value": 1315
+    "value": 1295
   },
   "products": [
     {
@@ -181,6 +181,23 @@
         }
       ],
       "id": 7
+    },
+    {
+      "date": "2024-08-11T23:02:59.667Z",
+      "totalPrice": 20,
+      "items": [
+        {
+          "quantity": 4,
+          "totalPrice": 20,
+          "product": {
+            "id": "1",
+            "name": "Suco de Laranja",
+            "price": 5,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 8
     }
   ]
 }
