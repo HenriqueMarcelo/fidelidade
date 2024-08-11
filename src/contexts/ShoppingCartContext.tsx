@@ -25,15 +25,15 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartContextPro
   const [items, itemsDispatch] = useReducer(shoppingCartItemsReducer, [])
 
   function deleteEverything() {
-    itemsDispatch({ type: 'DELETE_EVERYTHING', payload: { itemId: '', quantity: 0 } })
+    itemsDispatch({ type: 'DELETE_EVERYTHING' })
   }
 
   function removeAllItems(itemId: string) {
-    itemsDispatch({ type: 'DELETE_EVERYTHING', payload: { itemId, quantity: 0 } })
+    itemsDispatch({ type: 'REMOVE_ALL_ITEMS', payload: { itemId } })
   }
 
   function addItem(itemId: string) {
-    itemsDispatch({ type: 'ADD_ITEM', payload: { itemId, quantity: 0 } })
+    itemsDispatch({ type: 'ADD_ITEM', payload: { itemId } })
   }
 
   function updateQuantity(itemId: string, quantity: number) {
@@ -44,7 +44,7 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartContextPro
   }
 
   function removeItem(itemId: string) {
-    itemsDispatch({ type: 'REMOVE_ITEM', payload: { itemId, quantity: 0 } })
+    itemsDispatch({ type: 'REMOVE_ITEM', payload: { itemId } })
   }
 
   return (
