@@ -5,7 +5,7 @@ import { useContext } from 'react'
 
 export default function Home() {
   const { products } = useContext(ProductContext)
-  //todo: utilizar display grid
+
   return (
     <div className="container home__container">
       {products.map((product) => (
