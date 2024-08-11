@@ -7,13 +7,13 @@ interface ItemContextType {
   toggle: () => void
 }
 
-interface ShoppingCartContextProviderProps {
+interface VisualShoppingCartContextProviderProps {
   children: ReactNode
 }
 
-export const ShoppingCartContext = createContext({} as ItemContextType)
+export const VisualShoppingCartContext = createContext({} as ItemContextType)
 
-export function ShoppingCartContextProvider({ children }: ShoppingCartContextProviderProps) {
+export function VisualShoppingCartContextProvider({ children }: VisualShoppingCartContextProviderProps) {
   const [isHidden, setIsHidden] = useState(true)
 
   function open() {
@@ -31,7 +31,7 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartContextPro
   }
 
   return (
-    <ShoppingCartContext.Provider
+    <VisualShoppingCartContext.Provider
       value={{
         isHidden,
         open,
@@ -40,6 +40,6 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartContextPro
       }}
     >
       {children}
-    </ShoppingCartContext.Provider>
+    </VisualShoppingCartContext.Provider>
   )
 }

@@ -4,11 +4,11 @@ import './style.scss'
 import { GoHistory } from 'react-icons/go'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
-import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
+import { VisualShoppingCartContext } from '../../contexts/VisualShoppingCartContext'
 
 export default function Header() {
   const navigate = useNavigate()
-  const { toggle } = useContext(ShoppingCartContext)
+  const { toggle } = useContext(VisualShoppingCartContext)
 
   return (
     <div className="container header__container">

@@ -2,10 +2,10 @@ import { IoCloseCircle } from 'react-icons/io5'
 import CartItem from '../CartItem'
 import './style.scss'
 import { useContext } from 'react'
-import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
+import { VisualShoppingCartContext } from '../../contexts/VisualShoppingCartContext'
 
 export default function ShoppingCart() {
-  const { close, isHidden } = useContext(ShoppingCartContext)
+  const { close, isHidden } = useContext(VisualShoppingCartContext)
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleBackgroundClick = (e: any) => {
