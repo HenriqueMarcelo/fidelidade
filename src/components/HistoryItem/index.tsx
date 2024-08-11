@@ -1,32 +1,42 @@
+import { PurchaseProps } from '../../hooks/useCheckout'
 import './styles.scss'
 
-export default function HistoryItem() {
+type Props = {
+  history: PurchaseProps
+}
+
+export default function HistoryItem({ history }: Props) {
+  // todo: utilizar useMemo
+  const dataObj = new Date(history.date)
+
   return (
     <div className="history-item__base">
-      <div className="history-item__date">07 de janeiro</div>
-      <table className="history-table__table">
-        <tr className="history-table__tr">
-          <th className="history-table__th">Produto</th>
-          <th className="history-table__th">Preço</th>
-          <th className="history-table__th">Qtd</th>
-          <th className="history-table__th">Total</th>
-        </tr>
-        <tr className="history-table__tr">
-          <td className="history-table__td">Maria Anders</td>
-          <td className="history-table__td">F$ 5</td>
-          <td className="history-table__td">1</td>
-          <td className="history-table__td">F$ 5</td>
-        </tr>
-        <tr className="history-table__tr">
-          <td className="history-table__td">Francisco Chang</td>
-          <td className="history-table__td">F$ 6</td>
-          <td className="history-table__td">3</td>
-          <td className="history-table__td">F$ 18</td>
-        </tr>
-      </table>
+      <div className="history-item__date">{dataObj.toLocaleDateString()}</div>
+      {history.items.length && (
+        <table className="history-table__table">
+          <thead>
+            <tr className="history-table__tr">
+              <th className="history-table__th">Produto</th>
+              <th className="history-table__th">Preço</th>
+              <th className="history-table__th">Qtd</th>
+              <th className="history-table__th">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {history.items.map((item) => (
+              <tr className="history-table__tr" key={item?.product.id}>
+                <td className="history-table__td">{item?.product.name}</td>
+                <td className="history-table__td">{item?.product.price} pontos</td>
+                <td className="history-table__td">{item?.quantity}</td>
+                <td className="history-table__td">{item?.totalPrice} pontos</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
       <div className="history-item__line">
         <span>Total:</span>
-        <span>F$ 50</span>
+        <span>{Number(history.totalPrice)} pontos</span>
       </div>
     </div>
   )

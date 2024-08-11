@@ -5,13 +5,29 @@ import { produtos } from "../../produtos"
 import { api } from "../lib/axios"
 import { VisualShoppingCartContext } from "../contexts/VisualShoppingCartContext"
 
+interface IntemProps {
+    quantity: number;
+    totalPrice: number;
+    product: {
+        id: string;
+        name: string;
+        price: number;
+        image: string;
+    }
+}
+export interface PurchaseProps{
+    id?: number;
+    date: Date;
+    totalPrice: number;
+    items: (IntemProps | undefined)[];
+}
+
 export function useCheckout() {
     const { items, deleteEverything } = useContext(ShoppingCartContext)
     const { wallet, updateWallet } = useContext(WalletContext)
     const { close } = useContext(VisualShoppingCartContext)
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    async function createPurchase(purchase: any) {
+    async function createPurchase(purchase: PurchaseProps) {
         await api.post('/purchases', purchase)
     }
 
