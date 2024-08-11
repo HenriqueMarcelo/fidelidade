@@ -5,17 +5,25 @@ import { useContext } from 'react'
 import { VisualShoppingCartContext } from '../../contexts/VisualShoppingCartContext'
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import { produtos } from '../../../produtos.ts'
+import { WalletContext } from '../../contexts/WalletContext.tsx'
 
 export default function ShoppingCart() {
   const { close, isHidden } = useContext(VisualShoppingCartContext)
   const { totalPrice, items } = useContext(ShoppingCartContext)
-
-  console.log(items)
+  const { wallet } = useContext(WalletContext)
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleBackgroundClick = (e: any) => {
     if (e.target.classList.contains('shopping-cart__background')) {
       close()
+    }
+  }
+
+  // todo: use callback
+  function handleDoCheckout() {
+    if (totalPrice > wallet) {
+      alert('Você não tem pontos suficientes para finalziar esta compra :(')
+      return
     }
   }
 
@@ -44,7 +52,9 @@ export default function ShoppingCart() {
               <span>Total:</span>
               <span>F$ {totalPrice}</span>
             </div>
-            <button className="shopping-cart__button">Confirmar Compra</button>
+            <button className="shopping-cart__button" onClick={handleDoCheckout}>
+              Confirmar Compra
+            </button>
             <button className="shopping-cart__close" onClick={close}>
               <IoCloseCircle />
             </button>
