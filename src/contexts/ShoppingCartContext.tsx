@@ -1,6 +1,6 @@
-import { createContext, ReactNode, useReducer } from 'react'
+import { createContext, ReactNode, useContext, useReducer } from 'react'
 import { shoppingCartItemsReducer } from '../reducer/ShoppingCartItemsReducer'
-import { produtos } from '../../produtos'
+import { ProductContext } from './ProductContext'
 
 export interface Item {
   id: string
@@ -26,6 +26,7 @@ export const ShoppingCartContext = createContext({} as ShoppingCartContextType)
 
 export function ShoppingCartContextProvider({ children }: ShoppingCartContextProviderProps) {
   const [items, itemsDispatch] = useReducer(shoppingCartItemsReducer, [])
+  const { products } = useContext(ProductContext)
 
   function deleteEverything() {
     itemsDispatch({ type: 'DELETE_EVERYTHING' })
@@ -61,9 +62,9 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartContextPro
 
   // Todo: usar useMemo
   const totalPrice = items.reduce((accumulator, item) => {
-    const produto = produtos.find((i) => i.id === item.id)
-    if (produto) {
-      return accumulator + produto.price * item.quantity
+    const product = products.find((i) => i.id === item.id)
+    if (product) {
+      return accumulator + product.price * item.quantity
     }
     return accumulator
   }, 0)

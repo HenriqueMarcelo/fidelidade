@@ -3,7 +3,7 @@ import Button from '../Button'
 import './styles.scss'
 import { NumberInput } from '../NumberInput'
 import { useContext } from 'react'
-import { Product as ProductType } from '../../../produtos'
+import { ProductType } from '../../hooks/useProducts'
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 
 type Props = {

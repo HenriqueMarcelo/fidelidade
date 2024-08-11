@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { ShoppingCartContext } from "../contexts/ShoppingCartContext"
 import { WalletContext } from "../contexts/WalletContext"
-import { produtos } from "../../produtos"
+import { ProductContext } from "../contexts/ProductContext"
 import { api } from "../lib/axios"
 import { VisualShoppingCartContext } from "../contexts/VisualShoppingCartContext"
 
@@ -26,6 +26,7 @@ export function useCheckout() {
     const { items, deleteEverything } = useContext(ShoppingCartContext)
     const { wallet, updateWallet } = useContext(WalletContext)
     const { close } = useContext(VisualShoppingCartContext)
+    const {products} = useContext(ProductContext)
 
     async function createPurchase(purchase: PurchaseProps) {
         await api.post('/purchases', purchase)
@@ -33,14 +34,14 @@ export function useCheckout() {
 
     async function doCheckOut() {
         const itemsArray = items.map((item) => {
-            const produto = produtos.find((i) => i.id === item.id)
-            if(!produto) {
+            const product = products.find((i) => i.id === item.id)
+            if(!product) {
                 return
             }
             return {
                 quantity: item.quantity,
-                totalPrice: produto.price * item.quantity,
-                product: produto,
+                totalPrice: product.price * item.quantity,
+                product: product,
             }
         })
         const totalPrice = itemsArray.reduce((prev, current) => prev + Number(current?.totalPrice),0)

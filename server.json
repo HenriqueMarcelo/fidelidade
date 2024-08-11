@@ -1,6 +1,6 @@
 {
   "wallet": {
-    "value": 1605
+    "value": 1550
   },
   "products": [
     {
@@ -93,6 +93,40 @@
         }
       ],
       "id": 3
+    },
+    {
+      "date": "2024-08-11T19:09:59.070Z",
+      "totalPrice": 30,
+      "items": [
+        {
+          "quantity": 6,
+          "totalPrice": 30,
+          "product": {
+            "id": "1",
+            "name": "Suco de Laranja",
+            "price": 5,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 4
+    },
+    {
+      "date": "2024-08-11T19:22:13.774Z",
+      "totalPrice": 25,
+      "items": [
+        {
+          "quantity": 5,
+          "totalPrice": 25,
+          "product": {
+            "id": "1",
+            "name": "Suco de Laranja",
+            "price": 5,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 5
     }
   ]
 }

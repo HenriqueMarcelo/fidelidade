@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Product as ProductType } from '../../../produtos'
+import { ProductType } from '../../hooks/useProducts'
 import Button from '../Button'
 import './style.scss'
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'

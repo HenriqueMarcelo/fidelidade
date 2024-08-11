@@ -4,7 +4,7 @@ import './style.scss'
 import { useContext } from 'react'
 import { VisualShoppingCartContext } from '../../contexts/VisualShoppingCartContext'
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
-import { produtos } from '../../../produtos.ts'
+import { ProductContext } from '../../contexts/ProductContext.tsx'
 import { WalletContext } from '../../contexts/WalletContext.tsx'
 import { useCheckout } from '../../hooks/useCheckout.ts'
 
@@ -13,6 +13,7 @@ export default function ShoppingCart() {
   const { totalPrice, items } = useContext(ShoppingCartContext)
   const { wallet } = useContext(WalletContext)
   const { doCheckOut } = useCheckout()
+  const { products } = useContext(ProductContext)
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleBackgroundClick = (e: any) => {
@@ -41,7 +42,7 @@ export default function ShoppingCart() {
             <h2 className="shopping-cart__title">Itens do Carrinho</h2>
             <div className="shopping-cart__itens">
               {items.map((item) => {
-                const produto = produtos.find((product) => product.id === item.id)
+                const produto = products.find((product) => product.id === item.id)
                 if (produto) {
                   return <CartItem key={produto.id} product={produto} />
                 }
