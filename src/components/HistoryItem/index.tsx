@@ -7,11 +7,11 @@ type Props = {
 
 export default function HistoryItem({ history }: Props) {
   // todo: utilizar useMemo
-  const dataObj = new Date(history.date)
+  const dateString = new Date(history.date).toLocaleDateString()
 
   return (
     <div className="history-item__base">
-      <div className="history-item__date">{dataObj.toLocaleDateString()}</div>
+      <div className="history-item__date">{dateString}</div>
       {history.items.length && (
         <div className="history-table__base">
           <table className="history-table__table">

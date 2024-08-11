@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ProductType } from '../../hooks/useProducts'
+import { ProductType } from '../../contexts/ProductContext'
 import Button from '../Button'
 import './style.scss'
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
@@ -13,15 +13,13 @@ export default function Product({ product }: Props) {
   const { addItem, getQuantity, updateQuantity } = useContext(ShoppingCartContext)
   const itemQuantity = getQuantity(product.id)
 
-  //todo: depois de remover todos os itens, começa adicionando 2
-
   return (
     <div className="product__base">
       <img src={product.image} alt="" className="product__image" />
       <h2 className="product__name">{product.name}</h2>
       <div className="product_price">
-        <small className="product__currency">F$ </small>
         <strong className="product__value">{product.price}</strong>
+        <small className="product__currency"> pontos</small>
       </div>
       {!itemQuantity ? (
         <Button onClick={() => addItem(product.id)}>Adicionar ao Carrinho</Button>

@@ -54,7 +54,7 @@ export default function ShoppingCart() {
 
             <div className="shopping-cart__line">
               <span>Total:</span>
-              <span>F$ {totalPrice}</span>
+              <span>{totalPrice} pontos</span>
             </div>
             <button className="shopping-cart__button" onClick={handleDoCheckout}>
               Confirmar Compra

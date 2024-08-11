@@ -3,7 +3,7 @@ import Button from '../Button'
 import './styles.scss'
 import { NumberInput } from '../NumberInput'
 import { useContext } from 'react'
-import { ProductType } from '../../hooks/useProducts'
+import { ProductType } from '../../contexts/ProductContext'
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 
 type Props = {
@@ -23,7 +23,7 @@ export default function CartItem({ product }: Props) {
       <div className="cart-item__right">
         <h2 className="cart-item__name">
           {product.name}
-          <div className="cart-item__price">F$ {product.price}</div>
+          <div className="cart-item__price">{product.price} pontos</div>
         </h2>
         <div className="cart-item__buttons">
           <NumberInput value={itemQuantity} onChange={(val) => updateQuantity(product.id, val)} />
