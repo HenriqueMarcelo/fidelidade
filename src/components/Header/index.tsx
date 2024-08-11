@@ -1,6 +1,6 @@
 import { IoCartOutline, IoHomeOutline } from 'react-icons/io5'
 import Button from '../Button'
-import './style.scss'
+import styles from './styles.module.scss'
 import { GoHistory } from 'react-icons/go'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
@@ -15,13 +15,13 @@ export default function Header() {
   const { wallet } = useContext(WalletContext)
 
   return (
-    <div className="container header__container">
-      <div className="header__left">
-        <button className="header__logo" onClick={() => navigate('/')}>
+    <div className={`container ${styles['header__container']}`}>
+      <div className={styles['header__left']}>
+        <button className={styles['header__logo']} onClick={() => navigate('/')}>
           <IoHomeOutline />
           Fidelização
         </button>
-        <div className="header--mobile">
+        <div className={styles['header--mobile']}>
           <Button onClick={() => navigate('/historico')}>
             <GoHistory />
             Histórico
@@ -32,10 +32,10 @@ export default function Header() {
           </Button>
         </div>
       </div>
-      <div className="header__right">
-        <span className="header-info__base">
+      <div className={styles['header__right']}>
+        <span className={styles['header-info__base']}>
           Carteira:
-          <span className="header-info__value">{wallet} pontos</span>
+          <span className={styles['header-info__value']}>{wallet} pontos</span>
         </span>
         <Button onClick={() => navigate('/historico')}>
           <GoHistory />

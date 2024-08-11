@@ -1,5 +1,5 @@
 import { ChangeEvent, InputHTMLAttributes } from 'react'
-import './styles.scss'
+import styles from './styles.module.scss'
 import { FiMinus, FiPlus } from 'react-icons/fi'
 
 interface NumberInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
@@ -28,12 +28,18 @@ export function NumberInput({ onChange, value, ...rest }: NumberInputProps) {
   }
 
   return (
-    <div className="number-input__base">
-      <button className="number-input__button" type="button" onClick={handleDecreaseValue}>
+    <div className={styles['number-input__base']}>
+      <button className={styles['number-input__button']} type="button" onClick={handleDecreaseValue}>
         <FiMinus />
       </button>
-      <input className="number-input__input" type="number" value={value} onChange={handleSetCustomValue} {...rest} />
-      <button className="number-input__button" type="button" onClick={handleIncreaseValue}>
+      <input
+        className={styles['number-input__input']}
+        type="number"
+        value={value}
+        onChange={handleSetCustomValue}
+        {...rest}
+      />
+      <button className={styles['number-input__button']} type="button" onClick={handleIncreaseValue}>
         <FiPlus />
       </button>
     </div>

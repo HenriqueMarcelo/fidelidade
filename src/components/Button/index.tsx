@@ -1,4 +1,4 @@
-import './style.scss'
+import styles from './styles.module.scss'
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   info?: string
@@ -6,9 +6,9 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function Button({ children, info, ...rest }: Props) {
   return (
-    <button className="button__button" {...rest}>
+    <button className={styles['button__button']} {...rest}>
       {children}
-      {info && <strong className="button__value">{info}</strong>}
+      {info && <strong className={styles['button__value']}>{info}</strong>}
     </button>
   )
 }

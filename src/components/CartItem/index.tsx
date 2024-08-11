@@ -1,6 +1,6 @@
 import { AiOutlineDelete } from 'react-icons/ai'
 import Button from '../Button'
-import './styles.scss'
+import styles from './styles.module.scss'
 import { NumberInput } from '../NumberInput'
 import { useContext } from 'react'
 import { ProductType } from '../../contexts/ProductContext'
@@ -15,17 +15,17 @@ export default function CartItem({ product }: Props) {
   const itemQuantity = getQuantity(product.id)
 
   return (
-    <div className="cart-item__base">
+    <div className={styles['cart-item__base']}>
       <div>
-        <img src={product.image} alt="" className="cart-item__image" />
+        <img src={product.image} alt="" className={styles['cart-item__image']} />
       </div>
 
-      <div className="cart-item__right">
-        <h2 className="cart-item__name">
+      <div className={styles['cart-item__right']}>
+        <h2 className={styles['cart-item__name']}>
           {product.name}
-          <div className="cart-item__price">{product.price} pontos</div>
+          <div className={styles['cart-item__price']}>{product.price} pontos</div>
         </h2>
-        <div className="cart-item__buttons">
+        <div className={styles['cart-item__buttons']}>
           <NumberInput value={itemQuantity} onChange={(val) => updateQuantity(product.id, val)} />
           <Button onClick={() => removeAllItems(product.id)}>
             <AiOutlineDelete />

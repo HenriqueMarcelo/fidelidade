@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { ProductType } from '../../contexts/ProductContext'
 import Button from '../Button'
-import './style.scss'
+import styles from './styles.module.scss'
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import { NumberInput } from '../NumberInput'
 
@@ -14,12 +14,12 @@ export default function Product({ product }: Props) {
   const itemQuantity = getQuantity(product.id)
 
   return (
-    <div className="product__base">
-      <img src={product.image} alt="" className="product__image" />
-      <h2 className="product__name">{product.name}</h2>
-      <div className="product_price">
-        <strong className="product__value">{product.price}</strong>
-        <small className="product__currency"> pontos</small>
+    <div className={styles['product__base']}>
+      <img src={product.image} alt="" className={styles['product__image']} />
+      <h2 className={styles['product__name']}>{product.name}</h2>
+      <div className={styles['product_price']}>
+        <strong className={styles['product__value']}>{product.price}</strong>
+        <small className={styles['product__currency']}> pontos</small>
       </div>
       {!itemQuantity ? (
         <Button onClick={() => addItem(product.id)}>Adicionar ao Carrinho</Button>
