@@ -6,6 +6,8 @@ interface NumberInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, '
   onChange?: (customValue: number) => void
 }
 
+// todo: acertar a altura do input para ficar igual aos botões
+
 export function NumberInput({ onChange, value, ...rest }: NumberInputProps) {
   function handleSetCustomValue(e: ChangeEvent<HTMLInputElement>) {
     if (onChange) {

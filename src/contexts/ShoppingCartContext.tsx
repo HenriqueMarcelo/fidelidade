@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useReducer } from 'react'
 import { shoppingCartItemsReducer } from '../reducer/ShoppingCartItemsReducer'
+import { produtos } from '../../produtos'
 
 export interface Item {
   id: string
@@ -13,6 +14,8 @@ interface ShoppingCartContextType {
   addItem: (itemId: string) => void
   removeAllItems: (itemId: string) => void
   deleteEverything: () => void
+  totalPrice: number
+  getQuantity: (itemId: string) => number
 }
 
 interface ShoppingCartContextProviderProps {
@@ -37,15 +40,33 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartContextPro
   }
 
   function updateQuantity(itemId: string, quantity: number) {
-    if (quantity === 0) {
+    if (quantity <= 0) {
       removeAllItems(itemId)
+    } else {
+      itemsDispatch({ type: 'UPDATE_QUANTITY', payload: { itemId, quantity } })
     }
-    itemsDispatch({ type: 'UPDATE_QUANTITY', payload: { itemId, quantity } })
   }
 
   function removeItem(itemId: string) {
     itemsDispatch({ type: 'REMOVE_ITEM', payload: { itemId } })
   }
+
+  function getQuantity(itemId: string) {
+    const item = items.find((item) => item.id === itemId)
+    if (item) {
+      return item.quantity
+    }
+    return 0
+  }
+
+  // Todo: usar useMemo
+  const totalPrice = items.reduce((accumulator, item) => {
+    const coffee = produtos.find((i) => i.id === item.id)
+    if (coffee) {
+      return accumulator + coffee.price * item.quantity
+    }
+    return accumulator
+  }, 0)
 
   return (
     <ShoppingCartContext.Provider
@@ -56,6 +77,8 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartContextPro
         removeItem,
         updateQuantity,
         deleteEverything,
+        totalPrice,
+        getQuantity,
       }}
     >
       {children}

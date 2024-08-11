@@ -5,10 +5,12 @@ import { GoHistory } from 'react-icons/go'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { VisualShoppingCartContext } from '../../contexts/VisualShoppingCartContext'
+import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 
 export default function Header() {
   const navigate = useNavigate()
   const { open } = useContext(VisualShoppingCartContext)
+  const { items } = useContext(ShoppingCartContext)
 
   return (
     <div className="container header__container">
@@ -25,7 +27,7 @@ export default function Header() {
           <GoHistory />
           Histórico
         </Button>
-        <Button info="50" onClick={() => open()}>
+        <Button info={String(items.length)} onClick={() => open()}>
           <IoCartOutline />
           Carrinho:
         </Button>

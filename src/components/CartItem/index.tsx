@@ -2,24 +2,32 @@ import { AiOutlineDelete } from 'react-icons/ai'
 import Button from '../Button'
 import './styles.scss'
 import { NumberInput } from '../NumberInput'
-import { useState } from 'react'
+import { useContext } from 'react'
+import { Product as ProductType } from '../../../produtos'
+import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 
-export default function CartItem() {
-  const [val, setVal] = useState(1)
+type Props = {
+  product: ProductType
+}
+
+export default function CartItem({ product }: Props) {
+  const { getQuantity, updateQuantity, removeAllItems } = useContext(ShoppingCartContext)
+  const itemQuantity = getQuantity(product.id)
+
   return (
     <div className="cart-item__base">
       <div>
-        <img src="https://placehold.co/600x400" alt="" className="cart-item__image" />
+        <img src={product.image} alt="" className="cart-item__image" />
       </div>
 
       <div className="cart-item__right">
         <h2 className="cart-item__name">
-          Nome do produto
-          <div className="cart-item__price">F$ 10</div>
+          {product.name}
+          <div className="cart-item__price">F$ {product.price}</div>
         </h2>
         <div className="cart-item__buttons">
-          <NumberInput value={val} onChange={setVal} />
-          <Button>
+          <NumberInput value={itemQuantity} onChange={(val) => updateQuantity(product.id, val)} />
+          <Button onClick={() => removeAllItems(product.id)}>
             <AiOutlineDelete />
             Remover
           </Button>
