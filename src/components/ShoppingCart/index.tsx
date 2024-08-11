@@ -66,6 +66,9 @@ export default function ShoppingCart() {
         ) : (
           <>
             <h2 className="shopping-cart__title">O carrinho está vazio!</h2>
+            <button className="shopping-cart__close" onClick={close}>
+              <IoCloseCircle />
+            </button>
           </>
         )}
       </aside>

@@ -7,6 +7,10 @@
         padding: 1rem;
         border-radius: .5rem;
         gap: 1rem;
+
+        @media only screen and (max-width: 576px) {
+            flex-direction: column;
+        }
     }
 
     &__image {
@@ -39,5 +43,18 @@
     &__buttons {
         display: flex;
         gap: 1rem;
+
+        @media only screen and (max-width: 576px) {
+            & > * {
+                flex:1;
+            }
+            button {
+                font-size: 0;
+            }
+    
+            svg {
+                font-size: 1rem;
+            }
+        }
     }
 }
