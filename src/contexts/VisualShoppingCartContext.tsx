@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from 'react'
 
-interface ItemContextType {
+interface ContextType {
   isHidden: boolean
   open: () => void
   close: () => void
@@ -11,7 +11,7 @@ interface VisualShoppingCartContextProviderProps {
   children: ReactNode
 }
 
-export const VisualShoppingCartContext = createContext({} as ItemContextType)
+export const VisualShoppingCartContext = createContext({} as ContextType)
 
 export function VisualShoppingCartContextProvider({ children }: VisualShoppingCartContextProviderProps) {
   const [isHidden, setIsHidden] = useState(true)

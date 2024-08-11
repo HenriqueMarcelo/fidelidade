@@ -1,14 +1,19 @@
+import { Product as ProductType } from '../../../produtos'
 import Button from '../Button'
 import './style.scss'
 
-export default function Product() {
+type Props = {
+  product: ProductType
+}
+
+export default function Product({ product }: Props) {
   return (
     <div className="product__base">
-      <img src="https://placehold.co/600x400" alt="" className="product__image" />
-      <h2 className="product__name">Nome do produto</h2>
+      <img src={product.image} alt="" className="product__image" />
+      <h2 className="product__name">{product.name}</h2>
       <div className="product_price">
         <small className="product__currency">F$ </small>
-        <strong className="product__value">15</strong>
+        <strong className="product__value">{product.price}</strong>
       </div>
       <Button>Adicionar ao Carrinho</Button>
     </div>

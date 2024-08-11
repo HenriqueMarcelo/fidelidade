@@ -8,7 +8,7 @@ import { VisualShoppingCartContext } from '../../contexts/VisualShoppingCartCont
 
 export default function Header() {
   const navigate = useNavigate()
-  const { toggle } = useContext(VisualShoppingCartContext)
+  const { open } = useContext(VisualShoppingCartContext)
 
   return (
     <div className="container header__container">
@@ -25,7 +25,7 @@ export default function Header() {
           <GoHistory />
           Histórico
         </Button>
-        <Button info="50" onClick={() => toggle()}>
+        <Button info="50" onClick={() => open()}>
           <IoCartOutline />
           Carrinho:
         </Button>
