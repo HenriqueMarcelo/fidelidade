@@ -6,6 +6,11 @@
         gap: 1rem;
         padding-top: 2rem;
         padding-bottom: 2rem;
+
+        @media only screen and (max-width: 992px){
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__logo {
@@ -19,9 +24,39 @@
         gap: .5rem;
     }
 
-    &__buttons {
+    &__right {
         display: flex;
-        gap: 1rem
+        gap: 1rem;
+
+        @media (max-width: 992px){
+            button {
+                display: none;
+            }
+        }
+    }
+
+    &__left {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &--mobile {
+        display: none;
+        gap: 1rem;
+        
+        @media (max-width: 992px){
+            display: flex;
+        }
+        
+        button {
+            font-size: 0;
+        }
+
+        svg {
+            font-size: 1rem;
+        }
+
     }
 }
 
@@ -33,6 +68,10 @@
         background-color: transparent;
         color: black;
         justify-content: center;
+
+        @media (max-width: 992px){
+            padding: 0;
+        }
     }
 
     &__value {
@@ -42,5 +81,6 @@
         font-size: 1.5rem;
         font-weight: 700;
         line-height: 1rem;
+        white-space: nowrap;
     }
 }

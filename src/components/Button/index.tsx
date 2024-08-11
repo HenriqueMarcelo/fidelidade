@@ -8,7 +8,7 @@ export default function Button({ children, info, ...rest }: Props) {
   return (
     <button className="button__button" {...rest}>
       {children}
-      {info && <span className="button__value">{info}</span>}
+      {info && <strong className="button__value">{info}</strong>}
     </button>
   )
 }

@@ -16,14 +16,26 @@ export default function Header() {
 
   return (
     <div className="container header__container">
-      <button className="header__logo" onClick={() => navigate('/')}>
-        <IoHomeOutline />
-        Fidelização
-      </button>
-      <div className="header__buttons">
+      <div className="header__left">
+        <button className="header__logo" onClick={() => navigate('/')}>
+          <IoHomeOutline />
+          Fidelização
+        </button>
+        <div className="header--mobile">
+          <Button onClick={() => navigate('/historico')}>
+            <GoHistory />
+            Histórico
+          </Button>
+          <Button info={String(items.length)} onClick={() => open()}>
+            <IoCartOutline />
+            Carrinho:
+          </Button>
+        </div>
+      </div>
+      <div className="header__right">
         <span className="header-info__base">
           Carteira:
-          <span className="header-info__value">F$ {wallet}</span>
+          <span className="header-info__value">{wallet} pontos</span>
         </span>
         <Button onClick={() => navigate('/historico')}>
           <GoHistory />
