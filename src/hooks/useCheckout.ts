@@ -4,6 +4,7 @@ import { WalletContext } from '../contexts/WalletContext'
 import { ProductContext } from '../contexts/ProductContext'
 import { api } from '../lib/axios'
 import { VisualShoppingCartContext } from '../contexts/VisualShoppingCartContext'
+import { LoaderContext } from '../contexts/LoaderContext'
 
 interface IntemProps {
   quantity: number
@@ -27,6 +28,7 @@ export function useCheckout() {
   const { wallet, updateWallet } = useContext(WalletContext)
   const { close } = useContext(VisualShoppingCartContext)
   const { products } = useContext(ProductContext)
+  const { showLoader, hideLoader } = useContext(LoaderContext)
 
   async function createPurchase(purchase: PurchaseProps) {
     await api.post('/purchases', purchase)
@@ -52,15 +54,17 @@ export function useCheckout() {
         items: itemsArray,
       }
 
+      showLoader()
       await createPurchase(purchase)
       // Isso deveria ser feito pelo backend;
       await updateWallet(wallet - purchase.totalPrice)
+      hideLoader()
       deleteEverything()
       // todo: criar modal
       alert('Compra feita com sucesso!')
       close()
     },
-    [close, deleteEverything, items, products, updateWallet, wallet]
+    [close, deleteEverything, hideLoader, items, products, showLoader, updateWallet, wallet]
   )
 
   return {

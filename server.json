@@ -1,6 +1,6 @@
 {
   "wallet": {
-    "value": 920
+    "value": 240
   },
   "products": [
     {
@@ -259,6 +259,220 @@
         }
       ],
       "id": 11
+    },
+    {
+      "date": "2024-08-12T14:06:47.841Z",
+      "totalPrice": 60,
+      "items": [
+        {
+          "quantity": 6,
+          "totalPrice": 60,
+          "product": {
+            "id": "2",
+            "name": "10% de desconto",
+            "price": 10,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 12
+    },
+    {
+      "date": "2024-08-12T14:07:03.769Z",
+      "totalPrice": 100,
+      "items": [
+        {
+          "quantity": 5,
+          "totalPrice": 100,
+          "product": {
+            "id": "3",
+            "name": "Almoço Especial",
+            "price": 20,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 13
+    },
+    {
+      "date": "2024-08-12T14:07:29.257Z",
+      "totalPrice": 20,
+      "items": [
+        {
+          "quantity": 1,
+          "totalPrice": 20,
+          "product": {
+            "id": "3",
+            "name": "Almoço Especial",
+            "price": 20,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 14
+    },
+    {
+      "date": "2024-08-12T14:08:31.906Z",
+      "totalPrice": 40,
+      "items": [
+        {
+          "quantity": 4,
+          "totalPrice": 40,
+          "product": {
+            "id": "2",
+            "name": "10% de desconto",
+            "price": 10,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 15
+    },
+    {
+      "date": "2024-08-12T14:11:42.241Z",
+      "totalPrice": 180,
+      "items": [
+        {
+          "quantity": 9,
+          "totalPrice": 180,
+          "product": {
+            "id": "3",
+            "name": "Almoço Especial",
+            "price": 20,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 16
+    },
+    {
+      "date": "2024-08-12T14:13:32.329Z",
+      "totalPrice": 150,
+      "items": [
+        {
+          "quantity": 15,
+          "totalPrice": 150,
+          "product": {
+            "id": "2",
+            "name": "10% de desconto",
+            "price": 10,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 17
+    },
+    {
+      "date": "2024-08-12T14:14:40.890Z",
+      "totalPrice": 20,
+      "items": [
+        {
+          "quantity": 1,
+          "totalPrice": 20,
+          "product": {
+            "id": "3",
+            "name": "Almoço Especial",
+            "price": 20,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 18
+    },
+    {
+      "date": "2024-08-12T14:15:28.594Z",
+      "totalPrice": 20,
+      "items": [
+        {
+          "quantity": 1,
+          "totalPrice": 20,
+          "product": {
+            "id": "3",
+            "name": "Almoço Especial",
+            "price": 20,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 19
+    },
+    {
+      "date": "2024-08-12T14:21:54.169Z",
+      "totalPrice": 20,
+      "items": [
+        {
+          "quantity": 1,
+          "totalPrice": 20,
+          "product": {
+            "id": "3",
+            "name": "Almoço Especial",
+            "price": 20,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 20
+    },
+    {
+      "date": "2024-08-12T17:43:22.646Z",
+      "totalPrice": 20,
+      "items": [
+        {
+          "quantity": 1,
+          "totalPrice": 20,
+          "product": {
+            "id": "3",
+            "name": "Almoço Especial",
+            "price": 20,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 21
+    },
+    {
+      "date": "2024-08-12T17:44:38.246Z",
+      "totalPrice": 20,
+      "items": [
+        {
+          "quantity": 1,
+          "totalPrice": 20,
+          "product": {
+            "id": "3",
+            "name": "Almoço Especial",
+            "price": 20,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 22
+    },
+    {
+      "date": "2024-08-12T17:47:39.150Z",
+      "totalPrice": 30,
+      "items": [
+        {
+          "quantity": 1,
+          "totalPrice": 10,
+          "product": {
+            "id": "2",
+            "name": "10% de desconto",
+            "price": 10,
+            "image": "https://placehold.co/600x400"
+          }
+        },
+        {
+          "quantity": 1,
+          "totalPrice": 20,
+          "product": {
+            "id": "3",
+            "name": "Almoço Especial",
+            "price": 20,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 23
     }
   ]
 }

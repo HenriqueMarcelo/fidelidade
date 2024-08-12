@@ -7,6 +7,7 @@ import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import { ProductContext } from '../../contexts/ProductContext.tsx'
 import { WalletContext } from '../../contexts/WalletContext.tsx'
 import { useCheckout } from '../../hooks/useCheckout.ts'
+import { LoaderContext } from '../../contexts/LoaderContext.tsx'
 
 export default function ShoppingCart() {
   const { close, isHidden } = useContext(VisualShoppingCartContext)
@@ -14,6 +15,7 @@ export default function ShoppingCart() {
   const { wallet } = useContext(WalletContext)
   const { doCheckOut } = useCheckout()
   const { products } = useContext(ProductContext)
+  const { shown } = useContext(LoaderContext)
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleBackgroundClick = (e: any) => {
@@ -58,8 +60,8 @@ export default function ShoppingCart() {
               <span>Total:</span>
               <span>{totalPrice} pontos</span>
             </div>
-            <button className={styles['shopping-cart__button']} onClick={handleDoCheckout}>
-              Confirmar Compra
+            <button className={styles['shopping-cart__button']} onClick={handleDoCheckout} disabled={shown}>
+              {shown ? 'Carregando...' : 'Confirmar Compra'}
             </button>
             <button className={styles['shopping-cart__close']} onClick={close}>
               <IoCloseCircle />
