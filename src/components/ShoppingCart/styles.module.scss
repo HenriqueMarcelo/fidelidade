@@ -78,6 +78,12 @@
         width: 100%;
         text-transform: uppercase;
         font-weight: 500;
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: progress;
+            background-color: black!important;
+        }
         
         &:hover {
             background-color:#404040;
