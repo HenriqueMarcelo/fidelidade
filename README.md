@@ -4,7 +4,7 @@
 - [ ] Trocar Alert de pontos insuficientes por modal;
 - [ ] Adicionar animações
 - [ ] add favicon;
-- [ ] Remover console.log's
+- [x] Remover console.log's
 
 # Tarefas:
 
