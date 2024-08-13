@@ -15,7 +15,7 @@ export default function Product({ product }: Props) {
 
   return (
     <div className={styles['product__base']}>
-      <img src={product.image} alt="" className={styles['product__image']} />
+      <img src={product.image} alt={product.name} className={styles['product__image']} />
       <h2 className={styles['product__name']}>{product.name}</h2>
       <div className={styles['product_price']}>
         <strong className={styles['product__value']}>{product.price}</strong>

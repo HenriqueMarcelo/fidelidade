@@ -40,7 +40,7 @@ export default function HistoryItem({ history }: Props) {
       )}
       <div className={styles['history-item__line']}>
         <span>Total:</span>
-        <span>{Number(history.totalPrice)} pontos</span>
+        <span data-testid="total-price">{Number(history.totalPrice)} pontos</span>
       </div>
     </div>
   )

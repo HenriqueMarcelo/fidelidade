@@ -18,7 +18,7 @@ interface IntemProps {
 }
 export interface PurchaseProps {
   id?: number
-  date: Date
+  date: Date | string
   totalPrice: number
   items: (IntemProps | undefined)[]
 }

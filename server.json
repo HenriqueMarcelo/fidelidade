@@ -1,6 +1,6 @@
 {
   "wallet": {
-    "value": 240
+    "value": 145
   },
   "products": [
     {
@@ -473,6 +473,60 @@
         }
       ],
       "id": 23
+    },
+    {
+      "date": "2024-08-13T00:56:49.460Z",
+      "totalPrice": 85,
+      "items": [
+        {
+          "quantity": 1,
+          "totalPrice": 5,
+          "product": {
+            "id": "1",
+            "name": "Suco de Laranja",
+            "price": 5,
+            "image": "https://placehold.co/600x400"
+          }
+        },
+        {
+          "quantity": 2,
+          "totalPrice": 20,
+          "product": {
+            "id": "2",
+            "name": "10% de desconto",
+            "price": 10,
+            "image": "https://placehold.co/600x400"
+          }
+        },
+        {
+          "quantity": 3,
+          "totalPrice": 60,
+          "product": {
+            "id": "3",
+            "name": "Almoço Especial",
+            "price": 20,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 24
+    },
+    {
+      "date": "2024-08-13T02:08:58.238Z",
+      "totalPrice": 10,
+      "items": [
+        {
+          "quantity": 1,
+          "totalPrice": 10,
+          "product": {
+            "id": "2",
+            "name": "10% de desconto",
+            "price": 10,
+            "image": "https://placehold.co/600x400"
+          }
+        }
+      ],
+      "id": 25
     }
   ]
 }

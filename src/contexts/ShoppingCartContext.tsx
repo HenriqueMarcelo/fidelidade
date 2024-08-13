@@ -7,7 +7,7 @@ export interface Item {
   quantity: number
 }
 
-interface ShoppingCartContextType {
+export interface ShoppingCartContextType {
   items: Item[]
   removeItem: (itemId: string) => void
   updateQuantity: (itemId: string, quantity: number) => void
