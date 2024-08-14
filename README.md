@@ -17,7 +17,7 @@
    ```
 4. Inicie a aplicação (abra em outro terminal e mantenha aberto):
    ```bash
-   npm run server
+   npm run dev
    ```
 
 A aplicação, por padrão, estará disponível em http://localhost:5173.
