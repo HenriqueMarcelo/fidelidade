@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import Button from './index'
 import '@testing-library/jest-dom'
-import { describe, it, expect } from 'vitest'
 
 describe('Button component', () => {
   it('should render button with children', () => {
@@ -25,7 +24,7 @@ describe('Button component', () => {
 
   it('should render without info if info prop is not provided', () => {
     render(<Button>Click Me</Button>)
-    const infoElement = screen.queryByTestId('info')
+    const infoElement = screen.queryByRole('strong')
     expect(infoElement).not.toBeInTheDocument()
   })
 

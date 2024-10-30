@@ -11,6 +11,7 @@ export type ProductType = {
 
 type ProductContextProps = {
   products: ProductType[]
+  error: boolean
 }
 
 type Props = {
@@ -21,14 +22,21 @@ export const ProductContext = createContext({} as ProductContextProps)
 
 export function ProductContextProvider({ children }: Props) {
   const [products, setProducts] = useState<ProductType[]>([])
+  const [error, setError] = useState(false)
   const { showLoader, hideLoader } = useContext(LoaderContext)
 
   const fetchProducts = useCallback(
     async function fetchProducts() {
       showLoader()
-      const response = await api.get('/products')
+      setError(false)
+      try {
+        const response = await api.get('/products')
+        setProducts(response.data as ProductType[])
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (e) {
+        setError(true)
+      }
       hideLoader()
-      setProducts(response.data as ProductType[])
     },
     [hideLoader, showLoader]
   )
@@ -41,6 +49,7 @@ export function ProductContextProvider({ children }: Props) {
     <ProductContext.Provider
       value={{
         products,
+        error,
       }}
     >
       {children}
