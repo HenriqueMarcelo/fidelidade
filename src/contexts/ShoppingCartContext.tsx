@@ -3,6 +3,7 @@ import { shoppingCartItemsReducer } from '../reducer/ShoppingCartItemsReducer'
 import { ProductContext } from './ProductContext'
 
 export interface Item {
+  // deveria se chamar produto_id
   id: string
   quantity: number
 }

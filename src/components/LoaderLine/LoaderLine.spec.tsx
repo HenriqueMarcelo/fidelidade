@@ -8,6 +8,7 @@ describe('LoaderLine Component', () => {
     render(<LoaderLine />)
     const loaderElement = screen.getByRole('presentation')
     expect(loaderElement).toBeInTheDocument()
+    // todo: isso deveria ser um outro teste
     expect(loaderElement.className).toMatch(/loader-line/)
   })
 })
