@@ -8,5 +8,6 @@ export default defineConfig({
   test: {
     globals: true, // Habilite o uso de funções globais como describe, it, e expect
     environment: 'jsdom', // Define o ambiente de teste como jsdom, necessário para testar componentes React
+    setupFiles: './src/setupTests.ts',
   },
 })

@@ -61,7 +61,7 @@ export function useCheckout() {
       hideLoader()
       deleteEverything()
       // todo: criar modal
-      alert('Compra feita com sucesso!')
+      // alert('Compra feita com sucesso!')
       close()
     },
     [close, deleteEverything, hideLoader, items, products, showLoader, updateWallet, wallet]

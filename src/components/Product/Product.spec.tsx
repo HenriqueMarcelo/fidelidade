@@ -1,6 +1,4 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
-import '@testing-library/jest-dom' // Import necessário para toBeInTheDocument
 import Product from './index.tsx'
 import { ShoppingCartContext, ShoppingCartContextType } from '../../contexts/ShoppingCartContext'
 

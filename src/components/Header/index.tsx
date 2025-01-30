@@ -40,7 +40,7 @@ export default function Header() {
         <div className={styles['header__right']}>
           <span className={styles['header-info__base']}>
             Carteira:
-            <span className={styles['header-info__value']}>{wallet} pontos</span>
+            <strong className={styles['header-info__value']}>{wallet} pontos</strong>
           </span>
           <Button onClick={() => navigate('/historico')}>
             <GoHistory />

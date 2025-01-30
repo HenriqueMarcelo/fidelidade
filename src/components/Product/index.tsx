@@ -14,7 +14,7 @@ export default function Product({ product }: Props) {
   const itemQuantity = getQuantity(product.id)
 
   return (
-    <div className={styles['product__base']}>
+    <article className={styles['product__base']}>
       <img src={product.image} alt={product.name} className={styles['product__image']} />
       <h2 className={styles['product__name']}>{product.name}</h2>
       <div className={styles['product_price']}>
@@ -22,10 +22,12 @@ export default function Product({ product }: Props) {
         <small className={styles['product__currency']}> pontos</small>
       </div>
       {!itemQuantity ? (
-        <Button onClick={() => addItem(product.id)}>Adicionar ao Carrinho</Button>
+        <Button onClick={() => addItem(product.id)} type="button">
+          Adicionar ao Carrinho
+        </Button>
       ) : (
         <NumberInput value={itemQuantity} onChange={(value) => updateQuantity(product.id, value)} />
       )}
-    </div>
+    </article>
   )
 }

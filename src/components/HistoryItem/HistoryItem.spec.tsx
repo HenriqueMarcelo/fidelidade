@@ -1,8 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
 import HistoryItem from './index.tsx'
 import { PurchaseProps } from '../../hooks/useCheckout'
-import { describe, it, expect } from 'vitest'
 
 describe('HistoryItem Component', () => {
   const mockHistory: PurchaseProps = {
