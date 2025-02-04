@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div className={`container ${styles['home__container']}`}>
-      {products.map((product) => (
+      {products?.map((product) => (
         <Product key={product.id} product={product} />
       ))}
     </div>

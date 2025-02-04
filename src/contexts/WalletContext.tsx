@@ -16,9 +16,13 @@ export function WalletContextProvider({ children }: ProviderProps) {
   const [wallet, setWallet] = useState(0)
 
   async function fetchWallet() {
-    const response = await api.get('/wallet')
-
-    setWallet(response.data.value)
+    try {
+      const response = await api.get('/wallet')
+      setWallet(response.data.value)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
+      setWallet(0)
+    }
   }
 
   // Isso deveria ser feito pelo backend;
