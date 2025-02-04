@@ -5,6 +5,7 @@ import { LoaderContext } from '../contexts/LoaderContext'
 
 export function useHistory() {
   const [histories, setHistories] = useState<PurchaseProps[]>([])
+  const [error, setError] = useState(false)
   const {showLoader, hideLoader} = useContext(LoaderContext)
   async function fetchHistory() {
     const response = await api.get('/purchases')
@@ -14,14 +15,21 @@ export function useHistory() {
   useEffect(() => {
     async function aux() {
       showLoader()
-      const response = await fetchHistory()
-      hideLoader()
-      setHistories(response)
+      try {
+        const response = await fetchHistory()
+        setHistories(response)
+        setError(false)
+      } catch (error) {
+        setError(!!error)
+      } finally {
+        hideLoader()
+      } 
     }
     aux()
   }, [hideLoader, showLoader])
 
   return {
     histories,
+    error,
   }
 }

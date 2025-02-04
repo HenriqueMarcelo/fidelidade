@@ -1,9 +1,18 @@
+import { ErrorBanner } from '../../components/ErrorBanner'
 import HistoryItem from '../../components/HistoryItem'
 import { useHistory } from '../../hooks/useHistory'
 import styles from './styles.module.scss'
 
 export default function History() {
-  const { histories } = useHistory()
+  const { histories, error } = useHistory()
+
+  if(error) {
+    return  (
+      <div className='container'> 
+        <ErrorBanner />
+      </div>
+    )
+  }
 
   return (
     <div className={`container ${styles['history__container']}`}>
